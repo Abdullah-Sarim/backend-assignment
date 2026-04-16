@@ -2,7 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 import { useTaskStore } from "./taskStore";
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/v1/auth" : "/api/v1/auth";
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/v1/auth" : (import.meta.env.VITE_API_URL || "") + "/api/v1/auth";
 
 const getToken = () => localStorage.getItem("token");
 

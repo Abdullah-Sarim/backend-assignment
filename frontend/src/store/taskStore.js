@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/v1/tasks" : "/api/v1/tasks";
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/v1/tasks" : (import.meta.env.VITE_API_URL || "") + "/api/v1/tasks";
 
 const getToken = () => localStorage.getItem("token");
 
